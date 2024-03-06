@@ -13,15 +13,8 @@
 		C6CE689F2B97FE790035B995 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6CE689E2B97FE790035B995 /* Preview Assets.xcassets */; };
 		C6CE68A72B97FE820035B995 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C6CE68A52B97FE820035B995 /* LICENSE */; };
 		C6CE68A82B97FE820035B995 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = C6CE68A62B97FE820035B995 /* README.md */; };
-		C6CE68AA2B97FFE90035B995 /* PalInformation.json in Resources */ = {isa = PBXBuildFile; fileRef = C6CE68A92B97FFE90035B995 /* PalInformation.json */; };
-		C6CE68AE2B9800860035B995 /* Struct Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE68AD2B9800860035B995 /* Struct Character.swift */; };
-		C6CE68B02B98012D0035B995 /* Struct Auras.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE68AF2B98012D0035B995 /* Struct Auras.swift */; };
-		C6CE68B22B9801490035B995 /* Struct Breeding.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE68B12B9801490035B995 /* Struct Breeding.swift */; };
-		C6CE68B42B98018D0035B995 /* Struct Skills.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE68B32B98018D0035B995 /* Struct Skills.swift */; };
-		C6CE68B62B9801A20035B995 /* Struct Spawning.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE68B52B9801A20035B995 /* Struct Spawning.swift */; };
-		C6CE68B82B9801B60035B995 /* Struct Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE68B72B9801B60035B995 /* Struct Work.swift */; };
-		C6CE68BA2B9801C80035B995 /* Struct Stats.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE68B92B9801C80035B995 /* Struct Stats.swift */; };
-		C6CE68BC2B9801DC0035B995 /* Struct Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE68BB2B9801DC0035B995 /* Struct Types.swift */; };
+		C6CE68AA2B97FFE90035B995 /* Pal Info.json in Resources */ = {isa = PBXBuildFile; fileRef = C6CE68A92B97FFE90035B995 /* Pal Info.json */; };
+		C6CE68AE2B9800860035B995 /* Pal Info JSON Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE68AD2B9800860035B995 /* Pal Info JSON Manager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,15 +25,8 @@
 		C6CE689E2B97FE790035B995 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C6CE68A52B97FE820035B995 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C6CE68A62B97FE820035B995 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		C6CE68A92B97FFE90035B995 /* PalInformation.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = PalInformation.json; sourceTree = "<group>"; };
-		C6CE68AD2B9800860035B995 /* Struct Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct Character.swift"; sourceTree = "<group>"; };
-		C6CE68AF2B98012D0035B995 /* Struct Auras.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct Auras.swift"; sourceTree = "<group>"; };
-		C6CE68B12B9801490035B995 /* Struct Breeding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct Breeding.swift"; sourceTree = "<group>"; };
-		C6CE68B32B98018D0035B995 /* Struct Skills.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct Skills.swift"; sourceTree = "<group>"; };
-		C6CE68B52B9801A20035B995 /* Struct Spawning.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct Spawning.swift"; sourceTree = "<group>"; };
-		C6CE68B72B9801B60035B995 /* Struct Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct Work.swift"; sourceTree = "<group>"; };
-		C6CE68B92B9801C80035B995 /* Struct Stats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct Stats.swift"; sourceTree = "<group>"; };
-		C6CE68BB2B9801DC0035B995 /* Struct Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Struct Types.swift"; sourceTree = "<group>"; };
+		C6CE68A92B97FFE90035B995 /* Pal Info.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "Pal Info.json"; sourceTree = "<group>"; };
+		C6CE68AD2B9800860035B995 /* Pal Info JSON Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pal Info JSON Manager.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,11 +61,9 @@
 		C6CE68942B97FE780035B995 /* PalRepo */ = {
 			isa = PBXGroup;
 			children = (
-				C6CE68AC2B9800550035B995 /* Structs */,
-				C6CE68AB2B98003B0035B995 /* Info From Pal API */,
+				C6CE68AB2B98003B0035B995 /* Pal Information Handling */,
 				C6CE68952B97FE780035B995 /* PalRepoApp.swift */,
 				C6CE68972B97FE780035B995 /* ContentView.swift */,
-				C6CE689B2B97FE790035B995 /* Assets.xcassets */,
 				C6CE689D2B97FE790035B995 /* Preview Content */,
 			);
 			path = PalRepo;
@@ -88,32 +72,19 @@
 		C6CE689D2B97FE790035B995 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				C6CE689B2B97FE790035B995 /* Assets.xcassets */,
 				C6CE689E2B97FE790035B995 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		C6CE68AB2B98003B0035B995 /* Info From Pal API */ = {
+		C6CE68AB2B98003B0035B995 /* Pal Information Handling */ = {
 			isa = PBXGroup;
 			children = (
-				C6CE68A92B97FFE90035B995 /* PalInformation.json */,
+				C6CE68AD2B9800860035B995 /* Pal Info JSON Manager.swift */,
+				C6CE68A92B97FFE90035B995 /* Pal Info.json */,
 			);
-			path = "Info From Pal API";
-			sourceTree = "<group>";
-		};
-		C6CE68AC2B9800550035B995 /* Structs */ = {
-			isa = PBXGroup;
-			children = (
-				C6CE68AD2B9800860035B995 /* Struct Character.swift */,
-				C6CE68AF2B98012D0035B995 /* Struct Auras.swift */,
-				C6CE68B12B9801490035B995 /* Struct Breeding.swift */,
-				C6CE68B32B98018D0035B995 /* Struct Skills.swift */,
-				C6CE68B52B9801A20035B995 /* Struct Spawning.swift */,
-				C6CE68B72B9801B60035B995 /* Struct Work.swift */,
-				C6CE68B92B9801C80035B995 /* Struct Stats.swift */,
-				C6CE68BB2B9801DC0035B995 /* Struct Types.swift */,
-			);
-			path = Structs;
+			path = "Pal Information Handling";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,7 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6CE68AA2B97FFE90035B995 /* PalInformation.json in Resources */,
+				C6CE68AA2B97FFE90035B995 /* Pal Info.json in Resources */,
 				C6CE68A72B97FE820035B995 /* LICENSE in Resources */,
 				C6CE689F2B97FE790035B995 /* Preview Assets.xcassets in Resources */,
 				C6CE68A82B97FE820035B995 /* README.md in Resources */,
@@ -190,15 +161,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				C6CE68982B97FE780035B995 /* ContentView.swift in Sources */,
-				C6CE68BA2B9801C80035B995 /* Struct Stats.swift in Sources */,
-				C6CE68AE2B9800860035B995 /* Struct Character.swift in Sources */,
-				C6CE68BC2B9801DC0035B995 /* Struct Types.swift in Sources */,
-				C6CE68B02B98012D0035B995 /* Struct Auras.swift in Sources */,
-				C6CE68B22B9801490035B995 /* Struct Breeding.swift in Sources */,
-				C6CE68B82B9801B60035B995 /* Struct Work.swift in Sources */,
+				C6CE68AE2B9800860035B995 /* Pal Info JSON Manager.swift in Sources */,
 				C6CE68962B97FE780035B995 /* PalRepoApp.swift in Sources */,
-				C6CE68B42B98018D0035B995 /* Struct Skills.swift in Sources */,
-				C6CE68B62B9801A20035B995 /* Struct Spawning.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
