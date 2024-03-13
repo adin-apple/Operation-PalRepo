@@ -9,6 +9,9 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
+    
+    private var pals : [PalCharacter] = PalCharacter.allPals
+    
     var body: some View {
         Text("Hello!")
     }
