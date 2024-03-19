@@ -4,7 +4,7 @@
 //
 //  Created by Adin Donlagic on 3/5/24.
 //
-
+ 
 /*------------------------------------------------------------------------------------------------*/
 
 import Foundation
@@ -30,6 +30,7 @@ class PalInfoManager {
     }
 }
 
+/* Need to figure out what's going on with JSON Decoder */
 extension Bundle {
     func decode<T: Decodable>(file: String) -> T {
         guard let url = self.url(forResource: "PalInfo", withExtension: "json") else {
