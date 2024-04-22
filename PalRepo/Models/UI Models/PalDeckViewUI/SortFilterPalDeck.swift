@@ -2,21 +2,37 @@
     SortFilterPalDeck.swift
  */
 
-import Foundation
+/*----------------------------------------------------------------------------------------------------------*/
+/*  I M P O R T S                                                                                           */
+/*----------------------------------------------------------------------------------------------------------*/
 import SwiftUI
 import SwiftData
 
+/*----------------------------------------------------------------------------------------------------------*/
+/*  S T R U C T S                                                                                           */
+/*----------------------------------------------------------------------------------------------------------*/
 struct SortFilterPalDeck: View {
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  A T T R I B U T E S                                                                                 */
+    /*------------------------------------------------------------------------------------------------------*/
     @Environment(\.modelContext) private var context
     @Query var pals: [PalCharacter]
+    
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  V A R I A B L E   H A N D L I N G                                                                   */
+    /*------------------------------------------------------------------------------------------------------*/
     let sortSelection: sortOptions
     let typeSelection: typeOptions
     
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  I N I T                                                                                             */
+    /*------------------------------------------------------------------------------------------------------*/
     init(sortSelection: sortOptions, typeSelection: typeOptions) {
         
         self.sortSelection = sortSelection
         self.typeSelection = typeSelection
         
+        /* Sorting */
         let sortDescriptors: [SortDescriptor<PalCharacter>] = switch sortSelection {
         case .nameASC:
             [SortDescriptor(\PalCharacter.palName)]
@@ -67,17 +83,18 @@ struct SortFilterPalDeck: View {
         case .palFoodUsageDSC:
             [SortDescriptor(\PalCharacter.palStats.statFood, order: .reverse)]
         }
+
+        /* Filtering */
         
-
-
-
-
-
         
+        
+        /* Combine Query */
         _pals = Query(sort: sortDescriptors)
     }
 
-
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  U I   H A N D L I N G                                                                               */
+    /*------------------------------------------------------------------------------------------------------*/
     var body: some View {
         ScrollView {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: 100))], spacing: 16) {

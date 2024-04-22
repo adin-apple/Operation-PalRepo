@@ -1,11 +1,10 @@
 /*:
- BaseTwoView.swift
+    BaseTwoView.swift
  */
 
 /*----------------------------------------------------------------------------------------------------------*/
 /*  I M P O R T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
-import Foundation
 import SwiftUI
 import SwiftData
 import Firebase
@@ -14,19 +13,26 @@ import Firebase
 /*  S T R U C T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
 struct BaseTwoView: View {
-    @ObservedObject var baseData: BaseData
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  A T T R I B U T E S                                                                                 */
+    /*------------------------------------------------------------------------------------------------------*/
     @Environment(\.modelContext) private var context
+    
     @Query var allPals: [PalCharacter]
+    
+    @ObservedObject var baseData: BaseData
 
     @State private var isEditing = false
     @State private var editedName = ""
     @State private var selectedLabel = "Tag"
-
+    @State private var showAddPalsSheet = false
+    
     @Binding var base: Base
     @Binding var selectedPals: [PalCharacter]
 
-    @State private var showAddPalsSheet = false
-
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  U I   H A N D L I N G                                                                               */
+    /*------------------------------------------------------------------------------------------------------*/
     var body: some View {
         VStack {
             VStack {
@@ -71,7 +77,7 @@ struct BaseTwoView: View {
                         .cornerRadius(5)
                 }
                 .sheet(isPresented: $showAddPalsSheet) {
-                    SelectPalsView(allPals: allPals, selectedPals: $selectedPals)
+                    SelectPalsView(selectedPals: $selectedPals, allPals: allPals)
                 }
             }
             .padding()
@@ -80,7 +86,7 @@ struct BaseTwoView: View {
                     Button(action: {
                         isEditing.toggle()
                         if !isEditing {
-                            // Save the edited values to the base
+                            /* Save the edited values to the base */
                             base.name = editedName
                             base.label = selectedLabel
                         }
@@ -105,7 +111,7 @@ struct BaseTwoView: View {
                                     }
                                 }
                                 .onTapGesture(count: 2) {
-                                    // Double tap action
+                                    
                                 }
                                 .gesture(LongPressGesture().onEnded { _ in
                                     if let index = selectedPals.firstIndex(of: pal) {
@@ -121,10 +127,10 @@ struct BaseTwoView: View {
             Spacer()
         }
         .onAppear {
-            // Print the initial state of base1Pals
+            /* Print the initial state of base1Pals */
             print("Initial base1Pals:", baseData.base2Pals)
             
-            // Convert fetched pal IDs to PalCharacter objects
+            /* Convert fetched pal IDs to PalCharacter objects */
             let fetchedPalIds = baseData.base2Pals.map { $0.palID }
             print("Fetched Pal IDs:", fetchedPalIds)
             
@@ -133,13 +139,13 @@ struct BaseTwoView: View {
             }
             print("Filtered Pals:", selectedPals)
         }
-
-
-
         .onDisappear {
             if let userId = Auth.auth().currentUser?.uid {
                 let selectedPalIds = selectedPals.map { $0.palID }
-                FirestoreManager.shared.storeBaseData(base: base, selectedPals: selectedPalIds, baseNumber: 2, userId: userId)
+                FirestoreManager.shared.storeBaseData(base: base,
+                                                      selectedPals: selectedPalIds,
+                                                      baseNumber: 2,
+                                                      userId: userId)
             }
         }
 

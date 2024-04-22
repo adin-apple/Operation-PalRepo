@@ -1,5 +1,5 @@
 /*:
-    PalMiscInfoCard.swift
+    CircleButton.swift
  */
 
 /*----------------------------------------------------------------------------------------------------------*/
@@ -10,58 +10,29 @@ import SwiftUI
 /*----------------------------------------------------------------------------------------------------------*/
 /*  S T R U C T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
-struct PalMiscInfoCard: View {
+struct CircleButton: View {
     
     /*------------------------------------------------------------------------------------------------------*/
     /*  V A R I A B L E   H A N D L I N G                                                                   */
     /*------------------------------------------------------------------------------------------------------*/
-    let pal: PalCharacter
-    
-    /*------------------------------------------------------------------------------------------------------*/
-    /*  I N I T                                                                                             */
-    /*------------------------------------------------------------------------------------------------------*/
-    init(pal: PalCharacter) {
-        self.pal = pal
-    }
+    let number: Int
+    let action: () -> Void
     
     /*------------------------------------------------------------------------------------------------------*/
     /*  U I   H A N D L I N G                                                                               */
     /*------------------------------------------------------------------------------------------------------*/
     var body: some View {
-        VStack {
-            HStack{
-                Text("Misc. Info")
-                    .font(.title2)
-                Spacer()
+        Button(action: action) {
+            ZStack {
+                Circle()
+                    .foregroundColor(Color.blue)
+                    .frame(width: 100, height: 100)
+                    .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 2)
+                
+                Text("\(number)")
+                    .foregroundColor(.white)
+                    .font(.title)
             }
-            .padding()
-            .background(Color.blue.opacity(0.5))
-            
-            HStack{
-                Text("Rarity:")
-                Spacer()
-                Text("\(pal.palRarity)")
-            }
-            .padding(.horizontal)
-            
-            HStack{
-                Text("Price:")
-                Spacer()
-                Text("\(pal.palPrice)")
-            }
-            .padding(.horizontal)
-            
-            HStack{
-                Text("Size:")
-                Spacer()
-                Text("\(pal.palSize)")
-            }
-            .padding(.horizontal)
-            .padding(.bottom)
         }
-        .background(Color.white)
-        .cornerRadius(10)
-        .shadow(radius: 10)
-        .padding()
     }
 }

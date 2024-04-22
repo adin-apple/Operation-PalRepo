@@ -5,20 +5,28 @@
 /*----------------------------------------------------------------------------------------------------------*/
 /*  I M P O R T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
-import Foundation
 import SwiftUI
-import SwiftData
 
 /*----------------------------------------------------------------------------------------------------------*/
 /*  S T R U C T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
 struct PalSkillCard: View {
+
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  V A R I A B L E   H A N D L I N G                                                                   */
+    /*------------------------------------------------------------------------------------------------------*/
     let pal: PalCharacter
     
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  I N I T                                                                                             */
+    /*------------------------------------------------------------------------------------------------------*/
     init(pal: PalCharacter) {
         self.pal = pal
     }
     
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  U I   H A N D L I N G                                                                               */
+    /*------------------------------------------------------------------------------------------------------*/
     var body: some View {
         VStack {
             HStack{
@@ -100,29 +108,36 @@ struct PalSkillCard: View {
         .shadow(radius: 10)
         .padding()
     }
-}
-
-func backgroundColor(for skillType: String) -> Color {
-    switch skillType {
-    case "fire":
-        return Color.red
-    case "water":
-        return Color.blue.opacity(0.8)
-    case "grass":
-        return Color.green
-    case "electric":
-        return Color.yellow
-    case "ground":
-        return Color.brown
-    case "ice":
-        return Color.cyan
-    case "dragon":
-        return Color.purple
-    case "dark":
-        return Color.gray
-    case "neutral":
-        return Color.white
-    default:
-        return Color.black
+    
+    
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  P U B L I C   F U N C T I O N S                                                                     */
+    /*------------------------------------------------------------------------------------------------------*/
+    func backgroundColor(for skillType: String) -> Color {
+        switch skillType {
+        case "fire":
+            return Color.red
+        case "water":
+            return Color.blue.opacity(0.8)
+        case "grass":
+            return Color.green
+        case "electric":
+            return Color.yellow
+        case "ground":
+            return Color.brown
+        case "ice":
+            return Color.cyan
+        case "dragon":
+            return Color.purple
+        case "dark":
+            return Color.gray
+        case "neutral":
+            return Color.white
+        default:
+            return Color.black
+        }
     }
 }
+
+
+

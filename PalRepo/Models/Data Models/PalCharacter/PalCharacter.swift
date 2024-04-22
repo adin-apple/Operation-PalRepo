@@ -5,7 +5,6 @@
 /*----------------------------------------------------------------------------------------------------------*/
 /*  I M P O R T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
-import Foundation
 import SwiftUI
 import SwiftData
 
@@ -14,6 +13,10 @@ import SwiftData
 /*----------------------------------------------------------------------------------------------------------*/
 @Model
 class PalCharacter: Codable {
+    
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  V A R I A B L E   H A N D L I N G                                                                   */
+    /*------------------------------------------------------------------------------------------------------*/
     var palID: Int
     var palKey: String
     var palName: String
@@ -58,14 +61,28 @@ class PalCharacter: Codable {
         case palBreeding = "breeding"
     }
     
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  D E C O D I N G                                                                                     */
+    /*------------------------------------------------------------------------------------------------------*/
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        
+        /* Pal ID */
         self.palID = try container.decode(Int.self, forKey: .palID)
+        
+        /* Pal Key*/
         self.palKey = try container.decode(String.self, forKey: .palKey)
+        
+        /* Pal Name */
         self.palName = try container.decode(String.self, forKey: .palName)
+        
+        /* Pal Image */
         self.palImage = try container.decode(String.self, forKey: .palImage)
+        
+        /* Pal Drops */
         self.palDrops = try container.decode([String].self, forKey: .palDrops)
         
+        /* Pal Aura */
         if let auraContainer = try? container.nestedContainer(keyedBy: AuraCodingKeys.self, forKey: .palAura) {
             let name = try auraContainer.decode(String.self, forKey: .auraName)
             let details = try auraContainer.decode(String.self, forKey: .auraDetails)
@@ -75,8 +92,10 @@ class PalCharacter: Codable {
             self.palAura = nil
         }
         
+        /* Pal Details*/
         self.palDetails = try container.decode(String.self, forKey: .palDetails)
         
+        /* Pal Stats */
         let statsContainer = try container.nestedContainer(keyedBy: StatsCodingKeys.self, forKey: .palStats)
         let statHP = try statsContainer.decode(Int.self, forKey: .statHP)
         let statATT = try statsContainer.decode(Attack.self, forKey: .statAttack)
@@ -93,17 +112,28 @@ class PalCharacter: Codable {
                                  statSupport: statSUP,
                                  statFood: statFOD)
         
+        /* Pal Assets */
         self.palAsset = try container.decode(String.self, forKey: .palAsset)
+        
+        /* Pal Genus */
         self.palGenus = try container.decode(String.self, forKey: .palGenus)
+        
+        /* Pal Rarity */
         self.palRarity = try container.decode(Int.self, forKey: .palRarity)
+        
+        /* Pal Price */
         self.palPrice = try container.decode(Int.self, forKey: .palPrice)
+        
+        /* Pal Size*/
         self.palSize = try container.decode(String.self, forKey: .palSize)
         
+        /* Pal Maps*/
         let mapContainer = try? container.nestedContainer(keyedBy: MapsCodingKeys.self, forKey: .palMaps)
         let day = try? mapContainer?.decode(String.self, forKey: .spawnDay)
         let night = try? mapContainer?.decode(String.self, forKey: .spawnNit)
         self.palMaps = PalMap(spawnDay: day ?? "", spawnNit: night ?? "")
 
+        /* Pal Breeding */
         let breedingContainer = try container.nestedContainer(keyedBy: BreedingCodingKeys.self,
                                                               forKey: .palBreeding)
         let breedRank = try breedingContainer.decode(Int.self, forKey: .breedRank)
@@ -113,12 +143,15 @@ class PalCharacter: Codable {
         self.palBreeding = PalBreeding(breedRank: breedRank, breedOrder: breedOrder,
                                        childEligble: childEligble, maleProbability: maleProbability)
         
+        /* Pal Wiki URL */
         palWiki = try container.decode(URL.self, forKey: .palWiki)
+        
+        /* Pal Wiki Image */
         palImageWiki = try container.decode(URL.self, forKey: .palImageWiki)
         
+        /* Pal Typing */
         var typingContainer = try container.nestedUnkeyedContainer(forKey: .palTyping)
         var typingArray: [PalTyping] = []
-        
         while !typingContainer.isAtEnd {
             let typeContainer = try typingContainer.nestedContainer(keyedBy: TypingCodingKeys.self)
             let name = try typeContainer.decode(String.self, forKey: .typeName)
@@ -129,10 +162,9 @@ class PalCharacter: Codable {
         }
         self.palTyping = typingArray
         
-        
+        /* Pal Work Suitability */
         var workingContainer = try container.nestedUnkeyedContainer(forKey: .palWork)
         var workArray: [PalWork] = []
-        
         while !workingContainer.isAtEnd {
             let workContainer = try workingContainer.nestedContainer(keyedBy: WorkCodingKeys.self)
             let workType    = try workContainer.decode(String.self, forKey: .workType)
@@ -144,9 +176,9 @@ class PalCharacter: Codable {
         }
         self.palWork = workArray
         
+        /* Pal Skills */
         var skillingContainer = try container.nestedUnkeyedContainer(forKey: .palSkills)
         var skillArray: [PalSkill] = []
-        
         while !skillingContainer.isAtEnd {
             let skillContainer  = try skillingContainer.nestedContainer(keyedBy: SkillCodingKeys.self)
             let skillLevel      = try skillContainer.decode(Int.self, forKey: .skillLevel)
@@ -164,17 +196,36 @@ class PalCharacter: Codable {
         self.palSkills = skillArray
     }
     
+    
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  E N C O D I N G                                                                                     */
+    /*------------------------------------------------------------------------------------------------------*/
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
+
+        /* Pal ID */
         try container.encode(palID, forKey: .palID)
+        
+        /* Pal Key*/
         try container.encode(palKey, forKey: .palKey)
+        
+        /* Pal Name */
         try container.encode(palName, forKey: .palName)
+        
+        /* Pal Image */
         try container.encode(palImage, forKey: .palImage)
+        
+        /* Pal Wiki URL */
         try container.encode(palWiki, forKey: .palWiki)
+        
+        /* Pal Wiki Image */
         try container.encode(palImageWiki, forKey: .palImageWiki)
-        try container.encode(palWork, forKey: .palWork)
+        
+        
+        /* Pal Drops */
         try container.encode(palDrops, forKey: .palDrops)
         
+        /* Pal Aura */
         if let palAura = palAura {
             var auraContainer = container.nestedContainer(keyedBy: AuraCodingKeys.self, forKey: .palAura)
             try auraContainer.encode(palAura.auraName, forKey: .auraName)
@@ -182,20 +233,30 @@ class PalCharacter: Codable {
             try auraContainer.encode(palAura.auraTech, forKey: .auraTech)
         }
         
+        /* Pal Details */
         try container.encode(palDetails, forKey: .palDetails)
-        try container.encode(palSkills, forKey: .palSkills)
+
+        /* Pal Asset */
         try container.encode(palAsset, forKey: .palAsset)
-        try container.encode(palGenus, forKey: .palGenus)
-        try container.encode(palRarity, forKey: .palRarity)
-        try container.encode(palPrice, forKey: .palPrice)
-        try container.encode(palSize, forKey: .palSize)
-        try container.encode(palMaps, forKey: .palMaps)
         
+        /* Pal Genus */
+        try container.encode(palGenus, forKey: .palGenus)
+        
+        /* Pal Rarity */
+        try container.encode(palRarity, forKey: .palRarity)
+        
+        /* Pal Price */
+        try container.encode(palPrice, forKey: .palPrice)
+        
+        /* Pal Size */
+        try container.encode(palSize, forKey: .palSize)
+        
+        /* Pal Maps*/
         var mapContainer = container.nestedContainer(keyedBy: MapsCodingKeys.self, forKey: .palMaps)
         try mapContainer.encode(palMaps.spawnDay, forKey: .spawnDay)
         try mapContainer.encode(palMaps.spawnNit, forKey: .spawnNit)
         
-        
+        /* Pal Breeding */
         try container.encode(palBreeding, forKey: .palBreeding)
         var breedingContainer = container.nestedContainer(keyedBy: BreedingCodingKeys.self, forKey: .palBreeding)
         try breedingContainer.encode(palBreeding.breedRank, forKey: .breedRank)
@@ -203,6 +264,7 @@ class PalCharacter: Codable {
         try breedingContainer.encode(palBreeding.childEligble, forKey: .childEligble)
         try breedingContainer.encode(palBreeding.maleProbability, forKey: .maleProbability)
         
+        /* Pal Typing */
         var typingContainer = container.nestedUnkeyedContainer(forKey: .palTyping)
         for type in palTyping {
             var typeContainer = typingContainer.nestedContainer(keyedBy: TypingCodingKeys.self)
@@ -210,6 +272,7 @@ class PalCharacter: Codable {
             try typeContainer.encode(type.typeImage, forKey: .typeImage)
         }
         
+        /* Pal Work */
         var workingContainer = container.nestedUnkeyedContainer(forKey: .palTyping)
         for work in palWork {
             var workContainer = workingContainer.nestedContainer(keyedBy: WorkCodingKeys.self)
@@ -218,6 +281,7 @@ class PalCharacter: Codable {
             try workContainer.encode(work.workLevel, forKey: .workType)
         }
         
+        /* Pal Skills */
         var skillingContainer = container.nestedUnkeyedContainer(forKey: .palSkills)
         for skill in palSkills {
             var skillContainer = skillingContainer.nestedContainer(keyedBy: SkillCodingKeys.self)
@@ -229,6 +293,7 @@ class PalCharacter: Codable {
             try skillContainer.encode(skill.skillDetails, forKey: .skillDetails)
         }
         
+        /* Pal Stats */
         var statContainer = container.nestedContainer(keyedBy: StatsCodingKeys.self, forKey: .palStats)
         try statContainer.encode(palStats.statHP, forKey: .statHP)
         try statContainer.encode(palStats.statAttack, forKey: .statAttack)

@@ -1,6 +1,5 @@
 /*:
- PalDeckView.swift
- Created by Adin Donlagic on 04/10/24
+    PalDeckView.swift
  */
 
 /*----------------------------------------------------------------------------------------------------------*/
@@ -14,10 +13,18 @@ import SwiftData
 /*  S T R U C T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
 struct PalDeckView: View {
+    
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  A T T R I B U T E S                                                                                 */
+    /*------------------------------------------------------------------------------------------------------*/
     @State private var sortedSelection: sortOptions = .keyASC
     @State private var typePrimarySelection: typeOptions = .allTypes
     @State private var typeSecondarySelection: typeOptions = .allTypes
     @State private var workTypeSelection: workOptions = .allWork
+    
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  I N I T                                                                                             */
+    /*------------------------------------------------------------------------------------------------------*/
     var body: some View {
         VStack {
             
@@ -105,16 +112,9 @@ struct PalDeckView: View {
                                 Text(typeSelection.rawValue)
                             }
                         }
-                        .pickerStyle(.menu)
-                        
-                        
+                        .pickerStyle(.menu) 
                     }
                 }
-                
-                
-
-                
-                
             }
             .padding(.horizontal)
             .padding(.top, 10)
@@ -126,6 +126,9 @@ struct PalDeckView: View {
     }
 }
 
+/*----------------------------------------------------------------------------------------------------------*/
+/*  E N U M S                                                                                               */
+/*----------------------------------------------------------------------------------------------------------*/
 /* Options for Pal Deck Sorting */
 enum sortOptions: String, CaseIterable {
     case nameASC = "A-Z"

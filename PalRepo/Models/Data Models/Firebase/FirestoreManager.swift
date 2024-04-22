@@ -6,34 +6,40 @@
 /*  I M P O R T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
 import Firebase
-import FirebaseCore
-import FirebaseFirestore
-import SwiftUI
-import SwiftData
 
 /*----------------------------------------------------------------------------------------------------------*/
 /*  C L A S S                                                                                               */
 /*----------------------------------------------------------------------------------------------------------*/
 class FirestoreManager {
 
-    var palDictionary: [Int: PalCharacter] = [:]
-    
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  V A R I A B L E   H A N D L I N G                                                                   */
+    /*------------------------------------------------------------------------------------------------------*/
     static let shared = FirestoreManager()
-
     let db: Firestore
     let usersCollection: CollectionReference
+    
+    var palDictionary: [Int: PalCharacter] = [:]
 
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  I N I T                                                                                             */
+    /*------------------------------------------------------------------------------------------------------*/
     private init() {
         db = Firestore.firestore()
         usersCollection = db.collection("users")
     }
     
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  P U B L I C   F U N C T I O N S                                                                     */
+    /*------------------------------------------------------------------------------------------------------*/
+    /* Takes in all pals and converts to a dictionary */
     func setupPalDictionary(allPals: [PalCharacter]) {
         palDictionary = allPals.reduce(into: [:]) { dict, pal in
             dict[pal.palID] = pal
         }
     }
 
+    /* Takes in the data from a base and uploads it to the Firestore */
     func storeBaseData(base: Base, selectedPals: [Int], baseNumber: Int, userId: String) {
         let baseData: [String: Any] = [
             "name": base.name,
@@ -50,6 +56,7 @@ class FirestoreManager {
         }
     }
     
+    /* Retrieves base information from Firestore */
     func getBaseData(userId: String, baseData: BaseData, completion: @escaping (Error?) -> Void) {
 
         usersCollection.document(userId).collection("bases").getDocuments { querySnapshot, error in
@@ -103,7 +110,4 @@ class FirestoreManager {
             completion(nil)
         }
     }
-
-
-
 }

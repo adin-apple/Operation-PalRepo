@@ -5,20 +5,28 @@
 /*----------------------------------------------------------------------------------------------------------*/
 /*  I M P O R T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
-import Foundation
 import SwiftUI
-import SwiftData
 
 /*----------------------------------------------------------------------------------------------------------*/
 /*  S T R U C T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
 struct PalGeneralInfo: View {
+    
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  V A R I A B L E   H A N D L I N G                                                                   */
+    /*------------------------------------------------------------------------------------------------------*/
     let pal: PalCharacter
 
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  I N I T                                                                                             */
+    /*------------------------------------------------------------------------------------------------------*/
     init(pal: PalCharacter) {
         self.pal = pal
     }
     
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  U I   H A N D L I N G                                                                               */
+    /*------------------------------------------------------------------------------------------------------*/
 
     var body: some View {        
         Text("\(pal.palName)")
@@ -72,34 +80,4 @@ struct PalGeneralInfo: View {
         Link("\(pal.palName) Wiki", destination: URL(string: pal.palWiki.absoluteString)!)
             .padding()
     }
-}
-
-struct CircleButton: View {
-    let imageName: String
-
-    var body: some View {
-        Circle()
-            .foregroundColor(.blue)
-            .frame(width: 50, height: 50)
-            .overlay(
-                Image(systemName: imageName)
-                    .foregroundColor(.white)
-            )
-    }
-}
-
-func getPreviousKey(from key: String) -> String {
-    guard let intKey = Int(key) else {
-        return ""
-    }
-    
-    return String(format: "%03d", intKey - 1)
-}
-
-func getNextKey(from key: String) -> String {
-    guard let intKey = Int(key) else {
-        return ""
-    }
-    
-    return String(format: "%03d", intKey + 1)
 }

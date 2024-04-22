@@ -5,17 +5,23 @@
 /*----------------------------------------------------------------------------------------------------------*/
 /*  I M P O R T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
-import Foundation
 import SwiftUI
-import SwiftData
 
 /*----------------------------------------------------------------------------------------------------------*/
 /*  S T R U C T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
 struct BasesView: View {
+    
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  A T T R I B U T E S                                                                                 */
+    /*------------------------------------------------------------------------------------------------------*/
     @ObservedObject var baseData: BaseData
+    
     @Binding var path: NavigationPath
 
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  U I   H A N D L I N G                                                                               */
+    /*------------------------------------------------------------------------------------------------------*/
     var body: some View {
         VStack {
             Spacer()
@@ -29,7 +35,7 @@ struct BasesView: View {
             HStack {
                 Spacer()
                 VStack {
-                    myCircleButton(number: 1) {
+                    CircleButton(number: 1) {
                         path.append(1)
                     }
                 }
@@ -38,7 +44,7 @@ struct BasesView: View {
                 Spacer()
 
                 VStack {
-                    myCircleButton(number: 2) {
+                    CircleButton(number: 2) {
                         path.append(2)
                     }
                 }
@@ -47,7 +53,7 @@ struct BasesView: View {
                 Spacer()
 
                 VStack {
-                    myCircleButton(number: 3) {
+                    CircleButton(number: 3) {
                         path.append(3)
                     }
                 }
@@ -75,25 +81,3 @@ struct BasesView: View {
         }
     }
 }
-
-
-struct myCircleButton: View {
-    let number: Int
-    let action: () -> Void
-
-    var body: some View {
-        Button(action: action) {
-            ZStack {
-                Circle()
-                    .foregroundColor(Color.blue)
-                    .frame(width: 100, height: 100)
-                    .shadow(color: Color.black.opacity(0.3), radius: 5, x: 0, y: 2)
-                
-                Text("\(number)")
-                    .foregroundColor(.white)
-                    .font(.title)
-            }
-        }
-    }
-}
-

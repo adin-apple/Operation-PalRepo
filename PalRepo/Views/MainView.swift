@@ -1,5 +1,5 @@
 /*:
- MainView.swift
+    MainView.swift
  */
 
 /*----------------------------------------------------------------------------------------------------------*/
@@ -14,17 +14,23 @@ import Firebase
 /*  S T R U C T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
 struct MainView: View {
-    @StateObject var baseData = BaseData()
-    @State var path = NavigationPath()
-    @StateObject var authManager = AuthManager()
+    
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  A T T R I B U T E S                                                                                 */
+    /*------------------------------------------------------------------------------------------------------*/
     @Environment(\.modelContext) private var context
     @Query var allPals: [PalCharacter]
     
-    var body: some View {
+    @StateObject var baseData = BaseData()
+    @StateObject var authManager = AuthManager()
+    
+    @State var path = NavigationPath()
+
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  U I   H A N D L I N G                                                                               */
+    /*------------------------------------------------------------------------------------------------------*/    var body: some View {
         NavigationStack (path: $path) {
             ZStack {
-                
-                
                 
                 Image("PalWorldCover")
                     .resizable()
@@ -77,6 +83,7 @@ struct MainView: View {
                     if authManager.isLoggedIn {
                         authManager.signOut()
                     }
+            
                     FirestoreManager.shared.setupPalDictionary(allPals: allPals)
                 }
     }

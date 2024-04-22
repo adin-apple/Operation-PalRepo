@@ -1,5 +1,5 @@
 /*:
- SettingsView.swift
+    SettingsView.swift
  */
 
 /*----------------------------------------------------------------------------------------------------------*/
@@ -16,14 +16,23 @@ import FirebaseFirestore
 /*  S T R U C T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
 struct SettingsView: View {
-    @ObservedObject var baseData: BaseData
+    
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  A T T R I B U T E S                                                                                 */
+    /*------------------------------------------------------------------------------------------------------*/
     @Environment(\.modelContext) private var context
+    
+    @ObservedObject var baseData: BaseData
+    @StateObject var authManager = AuthManager()
+    
     @State private var email = ""
     @State private var password = ""
-    @StateObject var authManager = AuthManager()
     @State private var showLogoutAlert = false
     @State private var showAnotherUserAlert = false
 
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  I N I T                                                                                             */
+    /*------------------------------------------------------------------------------------------------------*/
     var body: some View {
         VStack {
             Text(authManager.isLoggedIn ? "Currently logged in!" : "Create an Account!")
@@ -55,7 +64,7 @@ struct SettingsView: View {
                             authManager.isLoggedIn = true
                             UserDefaults.standard.set(true, forKey: "isLoggedIn")
 
-                            // Fetch base data after signing up
+                            /* Fetch base data after signing up */
                             if let userId = Auth.auth().currentUser?.uid {
                                 FirestoreManager.shared.getBaseData(userId: userId, baseData: baseData) { error in
                                     if let error = error {
@@ -85,7 +94,7 @@ struct SettingsView: View {
                             authManager.isLoggedIn = true
                             UserDefaults.standard.set(true, forKey: "isLoggedIn")
 
-                            // Fetch base data after signing in
+                            /* Fetch base data after signing in */
                             if let userId = Auth.auth().currentUser?.uid {
                                 FirestoreManager.shared.getBaseData(userId: userId, baseData: baseData) { error in
                                     if let error = error {

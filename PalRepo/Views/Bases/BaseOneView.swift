@@ -1,11 +1,10 @@
 /*:
- BaseOneView.swift
+    BaseOneView.swift
  */
 
 /*----------------------------------------------------------------------------------------------------------*/
 /*  I M P O R T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
-import Foundation
 import SwiftUI
 import SwiftData
 import Firebase
@@ -14,19 +13,26 @@ import Firebase
 /*  S T R U C T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
 struct BaseOneView: View {
-    @ObservedObject var baseData: BaseData
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  A T T R I B U T E S                                                                                 */
+    /*------------------------------------------------------------------------------------------------------*/
     @Environment(\.modelContext) private var context
+    
     @Query var allPals: [PalCharacter]
+    
+    @ObservedObject var baseData: BaseData
 
     @State private var isEditing = false
     @State private var editedName = ""
     @State private var selectedLabel = "Tag"
-
+    @State private var showAddPalsSheet = false
+    
     @Binding var base: Base
     @Binding var selectedPals: [PalCharacter]
 
-    @State private var showAddPalsSheet = false
-
+    /*------------------------------------------------------------------------------------------------------*/
+    /*  U I   H A N D L I N G                                                                               */
+    /*------------------------------------------------------------------------------------------------------*/
     var body: some View {
         VStack {
             VStack {
@@ -71,7 +77,7 @@ struct BaseOneView: View {
                         .cornerRadius(5)
                 }
                 .sheet(isPresented: $showAddPalsSheet) {
-                    SelectPalsView(allPals: allPals, selectedPals: $selectedPals)
+                    SelectPalsView(selectedPals: $selectedPals, allPals: allPals)
                 }
             }
             .padding()
@@ -80,7 +86,7 @@ struct BaseOneView: View {
                     Button(action: {
                         isEditing.toggle()
                         if !isEditing {
-                            // Save the edited values to the base
+                            /* Save the edited values to the base */
                             base.name = editedName
                             base.label = selectedLabel
                         }
@@ -105,7 +111,7 @@ struct BaseOneView: View {
                                     }
                                 }
                                 .onTapGesture(count: 2) {
-                                    // Double tap action
+                                    
                                 }
                                 .gesture(LongPressGesture().onEnded { _ in
                                     if let index = selectedPals.firstIndex(of: pal) {
@@ -121,10 +127,10 @@ struct BaseOneView: View {
             Spacer()
         }
         .onAppear {
-            // Print the initial state of base1Pals
+            /* Print the initial state of base1Pals */
             print("Initial base1Pals:", baseData.base1Pals)
             
-            // Convert fetched pal IDs to PalCharacter objects
+            /* Convert fetched pal IDs to PalCharacter objects */
             let fetchedPalIds = baseData.base1Pals.map { $0.palID }
             print("Fetched Pal IDs:", fetchedPalIds)
             
@@ -133,56 +139,15 @@ struct BaseOneView: View {
             }
             print("Filtered Pals:", selectedPals)
         }
-
-
-
         .onDisappear {
             if let userId = Auth.auth().currentUser?.uid {
                 let selectedPalIds = selectedPals.map { $0.palID }
-                FirestoreManager.shared.storeBaseData(base: base, selectedPals: selectedPalIds, baseNumber: 1, userId: userId)
+                FirestoreManager.shared.storeBaseData(base: base,
+                                                      selectedPals: selectedPalIds,
+                                                      baseNumber: 1,
+                                                      userId: userId)
             }
         }
 
-    }
-}
-
-
-struct SelectPalsView: View {
-    var allPals: [PalCharacter]
-    @Binding var selectedPals: [PalCharacter]
-    @Environment(\.presentationMode) var presentationMode
-    
-    var body: some View {
-        NavigationView {
-            List(allPals.sorted(by: { $0.palName < $1.palName }), id: \.id) { pal in
-                HStack {
-                    Image(imageName(from: pal.palImage))
-                        .resizable()
-                        .frame(width: 35, height: 35)
-                    
-                    Spacer()
-                    
-                    Text(pal.palName)
-                    
-                    Spacer()
-                    
-                    if selectedPals.contains(pal) {
-                        Image(systemName: "checkmark")
-                            .foregroundColor(.blue)
-                    }
-                }
-                .onTapGesture {
-                    if let index = selectedPals.firstIndex(of: pal) {
-                        selectedPals.remove(at: index)
-                    } else {
-                        selectedPals.append(pal)
-                    }
-                }
-            }
-            .navigationTitle("Select Pals")
-            .navigationBarItems(trailing: Button("Done") {
-                presentationMode.wrappedValue.dismiss() // Dismiss the sheet
-            })
-        }
     }
 }
