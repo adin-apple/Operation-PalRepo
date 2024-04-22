@@ -1,6 +1,5 @@
 /*:
-    CampsView.swift
-    Created by Adin Donlagic on 04/10/24
+    PalAuraCard.swift
  */
 
 /*----------------------------------------------------------------------------------------------------------*/
@@ -13,23 +12,30 @@ import SwiftData
 /*----------------------------------------------------------------------------------------------------------*/
 /*  S T R U C T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
-struct CampsView: View {
-    var body: some View {
-        Text("Camps View")
-        
-        /*  TODO:   Button to create a new camp with a limit of three
-                    Details
-                    - Camp Name
-                    - Coordinates
-                    - Tag/Label
-            TODO:   Be able to edit the information of the camp
-            TODO:
-         */
+struct PalAuraCard: View {
+    let pal: PalCharacter
+    
+    init(pal: PalCharacter) {
+        self.pal = pal
     }
-}
+    
+    var body: some View {
+        VStack{
+            HStack{
+                Text(pal.palAura!.auraName.formatCapitalAndUnderscore())
+                    .font(.title2)
+                Spacer()
+            }
+            .padding()
+            .background(Color.blue.opacity(0.5))
 
-struct CampsView_Previews: PreviewProvider {
-    static var previews: some View {
-        CampsView()
+            Text(pal.palAura!.auraDetails)
+                .padding(.horizontal)
+                .padding(.bottom)
+        }
+        .background(Color.white)
+        .cornerRadius(10)
+        .shadow(radius: 10)
+        .padding()
     }
 }

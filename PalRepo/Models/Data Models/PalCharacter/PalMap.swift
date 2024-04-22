@@ -1,18 +1,21 @@
 /*:
-    CampsViewModel.swift
-    Created by Adin Donlagic on 04/10/24
+    PalMap.swift
  */
 
 /*----------------------------------------------------------------------------------------------------------*/
 /*  I M P O R T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
 import Foundation
-import SwiftUI
-import SwiftData
 
 /*----------------------------------------------------------------------------------------------------------*/
-/*  C L A S S E S                                                                                           */
+/*  S T R U C T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
-class CampsViewModel {
-    
+struct PalMap : Codable {
+    var spawnDay   : String
+    var spawnNit   : String
+}
+
+enum MapsCodingKeys: String, CodingKey {
+    case spawnDay = "day"
+    case spawnNit = "night"
 }

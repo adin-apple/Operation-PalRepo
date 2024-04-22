@@ -1,6 +1,5 @@
 /*:
-    MainViewModel.swift
-    Created by Adin Donlagic on 04/10/24
+    FilterButton.swift
  */
 
 /*----------------------------------------------------------------------------------------------------------*/
@@ -11,8 +10,22 @@ import SwiftUI
 import SwiftData
 
 /*----------------------------------------------------------------------------------------------------------*/
-/*  C L A S S E S                                                                                           */
+/*  S T R U C T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
-class MainViewModel {
+struct FilterButton: View {
+    let imageName: String
+    let isSelected: Bool
+    let action: () -> Void
     
+    var body: some View {
+        Button(action: action) {
+            Image(imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 30, height: 30)
+                .padding(5)
+                .background(isSelected ? Color.blue.opacity(0.5) : Color.gray)
+                .cornerRadius(10)
+        }
+    }
 }

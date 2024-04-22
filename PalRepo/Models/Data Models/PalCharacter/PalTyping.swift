@@ -1,18 +1,21 @@
 /*:
-    SettingsViewModel.swift
-    Created by Adin Donlagic on 04/10/24
+    PalTyping.swift
  */
 
 /*----------------------------------------------------------------------------------------------------------*/
 /*  I M P O R T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
 import Foundation
-import SwiftUI
-import SwiftData
 
 /*----------------------------------------------------------------------------------------------------------*/
-/*  C L A S S E S                                                                                           */
+/*  S T R U C T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
-class SettingsViewModel {
-    
+struct PalTyping: Codable, Hashable {
+    var typeName    : String
+    var typeImage   : String
+}
+
+enum TypingCodingKeys: String, CodingKey {
+    case typeName = "name"
+    case typeImage = "image"
 }

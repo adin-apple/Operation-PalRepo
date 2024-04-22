@@ -1,6 +1,5 @@
 /*:
     PalRepoApp.swift
-    Created by Adin Donlagic on 04/10/24
  */
 
 /*------------------------------------------------------------------------------------------------------------
@@ -8,9 +7,15 @@
 ------------------------------------------------------------------------------------------------------------*/
 import SwiftUI
 import SwiftData
+import Firebase
+import FirebaseCore
 
 @main
 struct PalRepoApp: App {
+    init() {
+        FirebaseApp.configure()
+    }
+    
     
     let palContainer: ModelContainer = {
         let schema = Schema([PalCharacter.self])
@@ -38,7 +43,7 @@ struct PalRepoApp: App {
 
                 let data = try Data(contentsOf: url)
                 let pals = try JSONDecoder().decode([PalCharacter].self, from: data)
-
+                
                 // Add all our data to the context.
                 for pal in pals {
                     container.mainContext.insert(pal)

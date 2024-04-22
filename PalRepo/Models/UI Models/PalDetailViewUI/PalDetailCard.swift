@@ -1,6 +1,5 @@
 /*:
-    ImageButton.swift
-    Created by Adin Donlagic on 04/10/24
+    PalDetailCard.swift
  */
 
 /*----------------------------------------------------------------------------------------------------------*/
@@ -13,16 +12,31 @@ import SwiftData
 /*----------------------------------------------------------------------------------------------------------*/
 /*  S T R U C T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
-struct ImageButton: View {
-    let imageName: String
-    let action: () -> Void
-
+struct PalDetailCard: View {
+    let pal: PalCharacter
+    
+    init(pal: PalCharacter) {
+        self.pal = pal
+    }
+    
     var body: some View {
-        Button(action: action) {
-            Image(imageName)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .scaleEffect(10)
+        VStack{
+            HStack{
+                Text("Details")
+                    .font(.title2)
+                Spacer()
+            }
+            .padding()
+            .background(Color.blue.opacity(0.5))
+            
+            
+            Text(pal.palDetails)
+                .padding(.horizontal)
+                .padding(.bottom)
         }
+        .background(Color.white)
+        .cornerRadius(10)
+        .shadow(radius: 10)
+        .padding()
     }
 }

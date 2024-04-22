@@ -1,6 +1,5 @@
 /*:
-    PalDeckViewModel.swift
-    Created by Adin Donlagic on 04/10/24
+    ImageButton.swift
  */
 
 /*----------------------------------------------------------------------------------------------------------*/
@@ -11,8 +10,18 @@ import SwiftUI
 import SwiftData
 
 /*----------------------------------------------------------------------------------------------------------*/
-/*  C L A S S E S                                                                                           */
+/*  S T R U C T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
-class PalDeckViewModel {
-    
+struct ImageButton: View {
+    let imageName: String
+    let action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Image(imageName)
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .scaleEffect(10)
+        }
+    }
 }

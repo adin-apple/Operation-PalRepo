@@ -1,26 +1,42 @@
 /*:
-    WorldMapView.swift
-    Created by Adin Donlagic on 04/10/24
+    PalStats.swift
  */
 
 /*----------------------------------------------------------------------------------------------------------*/
 /*  I M P O R T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
 import Foundation
-import SwiftUI
-import SwiftData
 
 /*----------------------------------------------------------------------------------------------------------*/
 /*  S T R U C T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
-struct WorldMapView: View {
-    var body: some View {
-        Text("WorldMap View")
-    }
+struct PalStats: Codable {
+    let statHP: Int
+    let statAttack: Attack
+    let statDefense: Int
+    let statSpeed: Speed
+    let statStamina: Int
+    let statSupport: Int
+    let statFood: Int
 }
 
-struct WorldMapView_Previews: PreviewProvider {
-    static var previews: some View {
-        WorldMapView()
-    }
+struct Attack: Codable {
+    let melee: Int
+    let ranged: Int
+}
+
+struct Speed: Codable {
+    let ride: Int
+    let run: Int
+    let walk: Int
+}
+
+enum StatsCodingKeys: String, CodingKey {
+    case statHP = "hp"
+    case statAttack = "attack"
+    case statDefense = "defense"
+    case statSpeed = "speed"
+    case statStamina = "stamina"
+    case statSupport = "support"
+    case statFood = "food"
 }

@@ -1,6 +1,5 @@
 /*:
-    MainView.swift
-    Created by Adin Donlagic on 04/10/24
+ MainView.swift
  */
 
 /*----------------------------------------------------------------------------------------------------------*/
@@ -9,86 +8,76 @@
 import Foundation
 import SwiftUI
 import SwiftData
-
+import Firebase
 
 /*----------------------------------------------------------------------------------------------------------*/
 /*  S T R U C T S                                                                                           */
 /*----------------------------------------------------------------------------------------------------------*/
 struct MainView: View {
+    @StateObject var baseData = BaseData()
     @State var path = NavigationPath()
+    @StateObject var authManager = AuthManager()
+    @Environment(\.modelContext) private var context
+    @Query var allPals: [PalCharacter]
     
     var body: some View {
-        
         NavigationStack (path: $path) {
-            setupUI(path: $path)
-        }
-    }
-    /*------------------------------------------------------------------------------------------------------*/
-    /*  P U B L I C   F U N C T I O N S                                                                     */
-    /*------------------------------------------------------------------------------------------------------*/
-    func setupUI(path: Binding<NavigationPath>) -> some View {
-        ZStack {
-            Image("PalWorldCover")
-                .resizable()
-                .ignoresSafeArea()
-            
-            VStack {
+            ZStack {
+                
+                
+                
+                Image("PalWorldCover")
+                    .resizable()
+                    .ignoresSafeArea()
+                
                 VStack {
-                    Image("Welcome Label")
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
-                        .scaleEffect(12)
-                    
-                    ImageButton(imageName: "PalDeck Button") {
-                        path.wrappedValue.append("PalDeck View")
+                    VStack {
+                        Image("Welcome Label")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .scaleEffect(12)
+                        
+                        ImageButton(imageName: "PalDeck Button") {
+                            path.append("PalDeck View")
+                        }
+                        
+                        ImageButton(imageName: "Bases Button") {
+                            path.append("Bases View")
+                        }
+                        
+                        
+                        ImageButton(imageName: "Settings Button") {
+                            path.append("Settings View")
+                        }
+                        Spacer().padding()
+                        Spacer().padding()
+                        Spacer().padding()
+                        
                     }
-                    
-                    ImageButton(imageName: "Camps Button") {
-                        path.wrappedValue.append("Camps View")
-                    }
-                    
-                    ImageButton(imageName: "World Map Button") {
-                        path.wrappedValue.append("World Map View")
-                    }
-                    
-                    ImageButton(imageName: "Settings Button") {
-                        path.wrappedValue.append("Settings View")
-                    }
-                    Spacer().padding()
-                    Spacer().padding()
-                    Spacer().padding()
-                    
-                }
-                .navigationDestination(for: String.self) { view in
-                    switch view {
-                    case "PalDeck View":
-                        PalDeckView()
-                        
-                    case "Camps View":
-                        CampsView()
-                        
-                    case "World Map View":
-                        WorldMapView()
-                        
-                    case "Settings View":
-                        SettingsView()
-                        
-                    default:
-                        MainView()
-                        
+                    .navigationDestination(for: String.self) { view in
+                        switch view {
+                        case "PalDeck View":
+                            PalDeckView().navigationBarBackButtonHidden(false)
+                            
+                        case "Bases View":
+                            BasesView(baseData: baseData, path: $path).navigationBarBackButtonHidden(false)
+                            
+                        case "Settings View":
+                            SettingsView(baseData: baseData).navigationBarBackButtonHidden(false)
+                            
+                        default:
+                            MainView()
+                            
+                        }
                     }
                 }
             }
         }
+        .onAppear {
+                    if authManager.isLoggedIn {
+                        authManager.signOut()
+                    }
+                    FirestoreManager.shared.setupPalDictionary(allPals: allPals)
+                }
     }
-    
 }
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-    }
-}
-
-
-

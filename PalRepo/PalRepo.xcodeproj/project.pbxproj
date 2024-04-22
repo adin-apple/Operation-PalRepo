@@ -7,19 +7,54 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4703F8EB2BD64E6700187978 /* FirestoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4703F8EA2BD64E6700187978 /* FirestoreManager.swift */; };
+		4703F8EE2BD6791700187978 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4703F8ED2BD6791700187978 /* AuthManager.swift */; };
 		47052AE22BC7AE4E005F65AE /* PalCharacterCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47052AE12BC7AE4E005F65AE /* PalCharacterCard.swift */; };
+		47052AE42BC89637005F65AE /* PalDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47052AE32BC89637005F65AE /* PalDetailView.swift */; };
+		472910D52BD570EE00B3214B /* BasesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 472910D42BD570EE00B3214B /* BasesView.swift */; };
+		4759343F2BD2C94C00B15745 /* PalSkillCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759343E2BD2C94C00B15745 /* PalSkillCard.swift */; };
+		475934412BD2CF0F00B15745 /* PalWorkCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475934402BD2CF0F00B15745 /* PalWorkCard.swift */; };
+		475934452BD2D90A00B15745 /* PalStatsCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475934442BD2D90A00B15745 /* PalStatsCard.swift */; };
+		475934472BD2DA0000B15745 /* PalMiscInfoCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475934462BD2DA0000B15745 /* PalMiscInfoCard.swift */; };
+		475934492BD2E00600B15745 /* PalDropCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475934482BD2E00600B15745 /* PalDropCard.swift */; };
+		4759344B2BD2E1D500B15745 /* PalDetailCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759344A2BD2E1D500B15745 /* PalDetailCard.swift */; };
+		4759344D2BD2E26500B15745 /* PalAuraCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759344C2BD2E26500B15745 /* PalAuraCard.swift */; };
+		4759344F2BD2EE6B00B15745 /* PalGeneralInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759344E2BD2EE6B00B15745 /* PalGeneralInfo.swift */; };
+		475934512BD2F18E00B15745 /* PalBreedingCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475934502BD2F18E00B15745 /* PalBreedingCard.swift */; };
+		475934532BD2F19500B15745 /* PalMapCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475934522BD2F19500B15745 /* PalMapCard.swift */; };
+		4759345B2BD34D4F00B15745 /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4759345A2BD34D4F00B15745 /* FilterButton.swift */; };
+		475934612BD35A5C00B15745 /* SortFilterPalDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475934602BD35A5C00B15745 /* SortFilterPalDeck.swift */; };
+		4785B0222BC8F6CE0061221B /* PalTyping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785B0212BC8F6CE0061221B /* PalTyping.swift */; };
+		4785B0242BC8F9570061221B /* PalWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785B0232BC8F9570061221B /* PalWork.swift */; };
+		4785B0262BC8F9C20061221B /* PalAura.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785B0252BC8F9C20061221B /* PalAura.swift */; };
+		4785B0282BC8FA270061221B /* PalSkill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785B0272BC8FA270061221B /* PalSkill.swift */; };
+		4785B02A2BC8FAA40061221B /* PalStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785B0292BC8FAA40061221B /* PalStats.swift */; };
+		4785B02C2BC8FCCE0061221B /* PalMap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785B02B2BC8FCCE0061221B /* PalMap.swift */; };
+		4785B02E2BC8FCE90061221B /* PalBreeding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4785B02D2BC8FCE90061221B /* PalBreeding.swift */; };
+		4789DA9E2BD3F3AE00667FF5 /* BaseOneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4789DA9D2BD3F3AE00667FF5 /* BaseOneView.swift */; };
+		4789DAA12BD3F3C500667FF5 /* BaseTwoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4789DAA02BD3F3C500667FF5 /* BaseTwoView.swift */; };
+		4789DAA32BD3F3CF00667FF5 /* BaseThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4789DAA22BD3F3CF00667FF5 /* BaseThreeView.swift */; };
+		4789DAAA2BD4003100667FF5 /* Base.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4789DAA92BD4003100667FF5 /* Base.swift */; };
 		47D471802BC65EBA00001CE8 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D4717F2BC65EBA00001CE8 /* MainView.swift */; };
 		47D471832BC66B6B00001CE8 /* PalCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D471822BC66B6B00001CE8 /* PalCharacter.swift */; };
 		47D4718A2BC681A700001CE8 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D471892BC681A700001CE8 /* ImageButton.swift */; };
 		47D4718D2BC74B1F00001CE8 /* PalDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D4718C2BC74B1F00001CE8 /* PalDeckView.swift */; };
-		47D4718F2BC74B2700001CE8 /* CampsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D4718E2BC74B2700001CE8 /* CampsView.swift */; };
-		47D471922BC74B3A00001CE8 /* WorldMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D471912BC74B3A00001CE8 /* WorldMapView.swift */; };
 		47D471942BC74B4700001CE8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D471932BC74B4700001CE8 /* SettingsView.swift */; };
-		47D471962BC74B8600001CE8 /* PalDeckViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D471952BC74B8600001CE8 /* PalDeckViewModel.swift */; };
-		47D471982BC74B8D00001CE8 /* CampsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D471972BC74B8D00001CE8 /* CampsViewModel.swift */; };
-		47D4719A2BC74B9700001CE8 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D471992BC74B9700001CE8 /* MainViewModel.swift */; };
-		47D4719C2BC74BA100001CE8 /* WorldMapViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D4719B2BC74BA100001CE8 /* WorldMapViewModel.swift */; };
-		47D4719E2BC74BA800001CE8 /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D4719D2BC74BA800001CE8 /* SettingsViewModel.swift */; };
+		47DF4E5D2BD57482004CA1F1 /* cstmCircleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DF4E5C2BD57482004CA1F1 /* cstmCircleButton.swift */; };
+		47DF4E602BD64116004CA1F1 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 47DF4E5F2BD64116004CA1F1 /* FirebaseAuth */; };
+		47DF4E622BD64116004CA1F1 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 47DF4E612BD64116004CA1F1 /* FirebaseAuthCombine-Community */; };
+		47DF4E642BD64116004CA1F1 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 47DF4E632BD64116004CA1F1 /* FirebaseDatabase */; };
+		47DF4E662BD64116004CA1F1 /* FirebaseDatabaseSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 47DF4E652BD64116004CA1F1 /* FirebaseDatabaseSwift */; };
+		47DF4E682BD64116004CA1F1 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 47DF4E672BD64116004CA1F1 /* FirebaseFirestore */; };
+		47DF4E6A2BD64116004CA1F1 /* FirebaseFirestoreCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 47DF4E692BD64116004CA1F1 /* FirebaseFirestoreCombine-Community */; };
+		47DF4E6C2BD64116004CA1F1 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 47DF4E6B2BD64116004CA1F1 /* FirebaseFirestoreSwift */; };
+		47DF4E6E2BD64116004CA1F1 /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = 47DF4E6D2BD64116004CA1F1 /* FirebaseFunctions */; };
+		47DF4E702BD64116004CA1F1 /* FirebaseFunctionsCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 47DF4E6F2BD64116004CA1F1 /* FirebaseFunctionsCombine-Community */; };
+		47DF4E722BD64116004CA1F1 /* FirebaseInstallations in Frameworks */ = {isa = PBXBuildFile; productRef = 47DF4E712BD64116004CA1F1 /* FirebaseInstallations */; };
+		47DF4E742BD64116004CA1F1 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 47DF4E732BD64116004CA1F1 /* FirebaseStorage */; };
+		47DF4E762BD64116004CA1F1 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 47DF4E752BD64116004CA1F1 /* FirebaseStorageCombine-Community */; };
+		47DF4E972BD647B7004CA1F1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 47DF4E962BD647B7004CA1F1 /* GoogleService-Info.plist */; };
+		47DF4E9B2BD64D45004CA1F1 /* BaseFireStoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47DF4E9A2BD64D44004CA1F1 /* BaseFireStoreData.swift */; };
 		C6CE68962B97FE780035B995 /* PalRepoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CE68952B97FE780035B995 /* PalRepoApp.swift */; };
 		C6CE689C2B97FE790035B995 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6CE689B2B97FE790035B995 /* Assets.xcassets */; };
 		C6CE68A72B97FE820035B995 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = C6CE68A52B97FE820035B995 /* LICENSE */; };
@@ -28,26 +63,48 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4703F8EA2BD64E6700187978 /* FirestoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreManager.swift; sourceTree = "<group>"; };
+		4703F8ED2BD6791700187978 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		47052AE12BC7AE4E005F65AE /* PalCharacterCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalCharacterCard.swift; sourceTree = "<group>"; };
+		47052AE32BC89637005F65AE /* PalDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalDetailView.swift; sourceTree = "<group>"; };
+		472910D42BD570EE00B3214B /* BasesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasesView.swift; sourceTree = "<group>"; };
+		4759343E2BD2C94C00B15745 /* PalSkillCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalSkillCard.swift; sourceTree = "<group>"; };
+		475934402BD2CF0F00B15745 /* PalWorkCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalWorkCard.swift; sourceTree = "<group>"; };
+		475934442BD2D90A00B15745 /* PalStatsCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalStatsCard.swift; sourceTree = "<group>"; };
+		475934462BD2DA0000B15745 /* PalMiscInfoCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalMiscInfoCard.swift; sourceTree = "<group>"; };
+		475934482BD2E00600B15745 /* PalDropCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalDropCard.swift; sourceTree = "<group>"; };
+		4759344A2BD2E1D500B15745 /* PalDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalDetailCard.swift; sourceTree = "<group>"; };
+		4759344C2BD2E26500B15745 /* PalAuraCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalAuraCard.swift; sourceTree = "<group>"; };
+		4759344E2BD2EE6B00B15745 /* PalGeneralInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalGeneralInfo.swift; sourceTree = "<group>"; };
+		475934502BD2F18E00B15745 /* PalBreedingCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalBreedingCard.swift; sourceTree = "<group>"; };
+		475934522BD2F19500B15745 /* PalMapCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalMapCard.swift; sourceTree = "<group>"; };
+		4759345A2BD34D4F00B15745 /* FilterButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
+		475934602BD35A5C00B15745 /* SortFilterPalDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortFilterPalDeck.swift; sourceTree = "<group>"; };
+		4785B0212BC8F6CE0061221B /* PalTyping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalTyping.swift; sourceTree = "<group>"; };
+		4785B0232BC8F9570061221B /* PalWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalWork.swift; sourceTree = "<group>"; };
+		4785B0252BC8F9C20061221B /* PalAura.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalAura.swift; sourceTree = "<group>"; };
+		4785B0272BC8FA270061221B /* PalSkill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalSkill.swift; sourceTree = "<group>"; };
+		4785B0292BC8FAA40061221B /* PalStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalStats.swift; sourceTree = "<group>"; };
+		4785B02B2BC8FCCE0061221B /* PalMap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalMap.swift; sourceTree = "<group>"; };
+		4785B02D2BC8FCE90061221B /* PalBreeding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalBreeding.swift; sourceTree = "<group>"; };
+		4789DA9D2BD3F3AE00667FF5 /* BaseOneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseOneView.swift; sourceTree = "<group>"; };
+		4789DAA02BD3F3C500667FF5 /* BaseTwoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTwoView.swift; sourceTree = "<group>"; };
+		4789DAA22BD3F3CF00667FF5 /* BaseThreeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseThreeView.swift; sourceTree = "<group>"; };
+		4789DAA92BD4003100667FF5 /* Base.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Base.swift; sourceTree = "<group>"; };
 		47D4717F2BC65EBA00001CE8 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		47D471822BC66B6B00001CE8 /* PalCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalCharacter.swift; sourceTree = "<group>"; };
 		47D471892BC681A700001CE8 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		47D4718C2BC74B1F00001CE8 /* PalDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalDeckView.swift; sourceTree = "<group>"; };
-		47D4718E2BC74B2700001CE8 /* CampsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampsView.swift; sourceTree = "<group>"; };
-		47D471912BC74B3A00001CE8 /* WorldMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldMapView.swift; sourceTree = "<group>"; };
 		47D471932BC74B4700001CE8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		47D471952BC74B8600001CE8 /* PalDeckViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalDeckViewModel.swift; sourceTree = "<group>"; };
-		47D471972BC74B8D00001CE8 /* CampsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CampsViewModel.swift; sourceTree = "<group>"; };
-		47D471992BC74B9700001CE8 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		47D4719B2BC74BA100001CE8 /* WorldMapViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldMapViewModel.swift; sourceTree = "<group>"; };
-		47D4719D2BC74BA800001CE8 /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
-		47D4719F2BC74C6B00001CE8 /* README_VM.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README_VM.md; sourceTree = "<group>"; };
 		47D471A02BC74C8200001CE8 /* README_V.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README_V.md; sourceTree = "<group>"; };
 		47D471A12BC74C8B00001CE8 /* README_M.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README_M.md; sourceTree = "<group>"; };
 		47D471A42BC777CF00001CE8 /* LearningSwiftData.md */ = {isa = PBXFileReference; explicitFileType = net.daringfireball.markdown; path = LearningSwiftData.md; sourceTree = "<group>"; };
+		47DF4E5C2BD57482004CA1F1 /* cstmCircleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cstmCircleButton.swift; sourceTree = "<group>"; };
+		47DF4E962BD647B7004CA1F1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		47DF4E9A2BD64D44004CA1F1 /* BaseFireStoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseFireStoreData.swift; sourceTree = "<group>"; };
 		C6CE68922B97FE780035B995 /* PalRepo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PalRepo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6CE68952B97FE780035B995 /* PalRepoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PalRepoApp.swift; sourceTree = "<group>"; };
-		C6CE689B2B97FE790035B995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C6CE689B2B97FE790035B995 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = Resources/Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		C6CE68A52B97FE820035B995 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		C6CE68A62B97FE820035B995 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		C6CE68A92B97FFE90035B995 /* pals.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = pals.json; sourceTree = "<group>"; };
@@ -58,44 +115,128 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47DF4E662BD64116004CA1F1 /* FirebaseDatabaseSwift in Frameworks */,
+				47DF4E642BD64116004CA1F1 /* FirebaseDatabase in Frameworks */,
+				47DF4E702BD64116004CA1F1 /* FirebaseFunctionsCombine-Community in Frameworks */,
+				47DF4E602BD64116004CA1F1 /* FirebaseAuth in Frameworks */,
+				47DF4E6E2BD64116004CA1F1 /* FirebaseFunctions in Frameworks */,
+				47DF4E6C2BD64116004CA1F1 /* FirebaseFirestoreSwift in Frameworks */,
+				47DF4E6A2BD64116004CA1F1 /* FirebaseFirestoreCombine-Community in Frameworks */,
+				47DF4E682BD64116004CA1F1 /* FirebaseFirestore in Frameworks */,
+				47DF4E742BD64116004CA1F1 /* FirebaseStorage in Frameworks */,
+				47DF4E622BD64116004CA1F1 /* FirebaseAuthCombine-Community in Frameworks */,
+				47DF4E762BD64116004CA1F1 /* FirebaseStorageCombine-Community in Frameworks */,
+				47DF4E722BD64116004CA1F1 /* FirebaseInstallations in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4703F8EC2BD6790800187978 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				4703F8ED2BD6791700187978 /* AuthManager.swift */,
+				47DF4E9A2BD64D44004CA1F1 /* BaseFireStoreData.swift */,
+				4703F8EA2BD64E6700187978 /* FirestoreManager.swift */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		47052AE52BC8963E005F65AE /* PalDeck */ = {
+			isa = PBXGroup;
+			children = (
+				47D4718C2BC74B1F00001CE8 /* PalDeckView.swift */,
+				47052AE32BC89637005F65AE /* PalDetailView.swift */,
+			);
+			path = PalDeck;
+			sourceTree = "<group>";
+		};
+		475934562BD346FD00B15745 /* PalDetailViewUI */ = {
+			isa = PBXGroup;
+			children = (
+				4759344C2BD2E26500B15745 /* PalAuraCard.swift */,
+				475934502BD2F18E00B15745 /* PalBreedingCard.swift */,
+				4759344A2BD2E1D500B15745 /* PalDetailCard.swift */,
+				475934482BD2E00600B15745 /* PalDropCard.swift */,
+				4759344E2BD2EE6B00B15745 /* PalGeneralInfo.swift */,
+				475934522BD2F19500B15745 /* PalMapCard.swift */,
+				475934462BD2DA0000B15745 /* PalMiscInfoCard.swift */,
+				4759343E2BD2C94C00B15745 /* PalSkillCard.swift */,
+				475934442BD2D90A00B15745 /* PalStatsCard.swift */,
+				475934402BD2CF0F00B15745 /* PalWorkCard.swift */,
+			);
+			path = PalDetailViewUI;
+			sourceTree = "<group>";
+		};
+		475934572BD3472100B15745 /* PalDeckViewUI */ = {
+			isa = PBXGroup;
+			children = (
+				47052AE12BC7AE4E005F65AE /* PalCharacterCard.swift */,
+				475934602BD35A5C00B15745 /* SortFilterPalDeck.swift */,
+			);
+			path = PalDeckViewUI;
+			sourceTree = "<group>";
+		};
+		4785B0202BC8F6B40061221B /* PalCharacter */ = {
+			isa = PBXGroup;
+			children = (
+				47D471822BC66B6B00001CE8 /* PalCharacter.swift */,
+				4785B0252BC8F9C20061221B /* PalAura.swift */,
+				4785B02D2BC8FCE90061221B /* PalBreeding.swift */,
+				4785B02B2BC8FCCE0061221B /* PalMap.swift */,
+				4785B0272BC8FA270061221B /* PalSkill.swift */,
+				4785B0292BC8FAA40061221B /* PalStats.swift */,
+				4785B0212BC8F6CE0061221B /* PalTyping.swift */,
+				4785B0232BC8F9570061221B /* PalWork.swift */,
+			);
+			path = PalCharacter;
+			sourceTree = "<group>";
+		};
+		4789DA9F2BD3F3B400667FF5 /* Bases */ = {
+			isa = PBXGroup;
+			children = (
+				472910D42BD570EE00B3214B /* BasesView.swift */,
+				4789DA9D2BD3F3AE00667FF5 /* BaseOneView.swift */,
+				4789DAA02BD3F3C500667FF5 /* BaseTwoView.swift */,
+				4789DAA22BD3F3CF00667FF5 /* BaseThreeView.swift */,
+			);
+			path = Bases;
+			sourceTree = "<group>";
+		};
+		4789DAA42BD3FF5B00667FF5 /* BasesViewUI */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BasesViewUI;
+			sourceTree = "<group>";
+		};
+		4789DAAB2BD4003500667FF5 /* Bases */ = {
+			isa = PBXGroup;
+			children = (
+				4789DAA92BD4003100667FF5 /* Base.swift */,
+			);
+			path = Bases;
+			sourceTree = "<group>";
+		};
 		47D471842BC66CD000001CE8 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				47D471A02BC74C8200001CE8 /* README_V.md */,
+				4789DA9F2BD3F3B400667FF5 /* Bases */,
 				47D4717F2BC65EBA00001CE8 /* MainView.swift */,
-				47D4718C2BC74B1F00001CE8 /* PalDeckView.swift */,
-				47D4718E2BC74B2700001CE8 /* CampsView.swift */,
-				47D471912BC74B3A00001CE8 /* WorldMapView.swift */,
+				47052AE52BC8963E005F65AE /* PalDeck */,
+				47D471A02BC74C8200001CE8 /* README_V.md */,
 				47D471932BC74B4700001CE8 /* SettingsView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		47D471852BC66CD800001CE8 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				47D4719F2BC74C6B00001CE8 /* README_VM.md */,
-				47D471992BC74B9700001CE8 /* MainViewModel.swift */,
-				47D471952BC74B8600001CE8 /* PalDeckViewModel.swift */,
-				47D471972BC74B8D00001CE8 /* CampsViewModel.swift */,
-				47D4719B2BC74BA100001CE8 /* WorldMapViewModel.swift */,
-				47D4719D2BC74BA800001CE8 /* SettingsViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		47D471862BC66CDF00001CE8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				47D471A12BC74C8B00001CE8 /* README_M.md */,
-				47D471882BC6818A00001CE8 /* UI Models */,
 				47D471872BC6818200001CE8 /* Data Models */,
+				47D471882BC6818A00001CE8 /* UI Models */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -103,7 +244,9 @@
 		47D471872BC6818200001CE8 /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
-				47D471822BC66B6B00001CE8 /* PalCharacter.swift */,
+				4789DAAB2BD4003500667FF5 /* Bases */,
+				4703F8EC2BD6790800187978 /* Firebase */,
+				4785B0202BC8F6B40061221B /* PalCharacter */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
@@ -111,8 +254,10 @@
 		47D471882BC6818A00001CE8 /* UI Models */ = {
 			isa = PBXGroup;
 			children = (
-				47052AE12BC7AE4E005F65AE /* PalCharacterCard.swift */,
-				47D471892BC681A700001CE8 /* ImageButton.swift */,
+				4789DAA42BD3FF5B00667FF5 /* BasesViewUI */,
+				47DF4E982BD64D06004CA1F1 /* Buttons */,
+				475934572BD3472100B15745 /* PalDeckViewUI */,
+				475934562BD346FD00B15745 /* PalDetailViewUI */,
 			);
 			path = "UI Models";
 			sourceTree = "<group>";
@@ -120,9 +265,10 @@
 		47D4718B2BC6833400001CE8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C6CE689B2B97FE790035B995 /* Assets.xcassets */,
+				47DF4E962BD647B7004CA1F1 /* GoogleService-Info.plist */,
 				47D471A52BC779B900001CE8 /* LearningSwiftData */,
 				C6CE68952B97FE780035B995 /* PalRepoApp.swift */,
-				C6CE689B2B97FE790035B995 /* Assets.xcassets */,
 				C6CE68A92B97FFE90035B995 /* pals.json */,
 			);
 			path = Resources;
@@ -136,6 +282,16 @@
 			path = LearningSwiftData;
 			sourceTree = "<group>";
 		};
+		47DF4E982BD64D06004CA1F1 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				47DF4E5C2BD57482004CA1F1 /* cstmCircleButton.swift */,
+				4759345A2BD34D4F00B15745 /* FilterButton.swift */,
+				47D471892BC681A700001CE8 /* ImageButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		C6CE68892B97FE780035B995 = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +300,6 @@
 				47D4718B2BC6833400001CE8 /* Resources */,
 				47D471862BC66CDF00001CE8 /* Models */,
 				47D471842BC66CD000001CE8 /* Views */,
-				47D471852BC66CD800001CE8 /* ViewModels */,
 				C6CE68932B97FE780035B995 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -173,6 +328,20 @@
 			dependencies = (
 			);
 			name = PalRepo;
+			packageProductDependencies = (
+				47DF4E5F2BD64116004CA1F1 /* FirebaseAuth */,
+				47DF4E612BD64116004CA1F1 /* FirebaseAuthCombine-Community */,
+				47DF4E632BD64116004CA1F1 /* FirebaseDatabase */,
+				47DF4E652BD64116004CA1F1 /* FirebaseDatabaseSwift */,
+				47DF4E672BD64116004CA1F1 /* FirebaseFirestore */,
+				47DF4E692BD64116004CA1F1 /* FirebaseFirestoreCombine-Community */,
+				47DF4E6B2BD64116004CA1F1 /* FirebaseFirestoreSwift */,
+				47DF4E6D2BD64116004CA1F1 /* FirebaseFunctions */,
+				47DF4E6F2BD64116004CA1F1 /* FirebaseFunctionsCombine-Community */,
+				47DF4E712BD64116004CA1F1 /* FirebaseInstallations */,
+				47DF4E732BD64116004CA1F1 /* FirebaseStorage */,
+				47DF4E752BD64116004CA1F1 /* FirebaseStorageCombine-Community */,
+			);
 			productName = PalRepo;
 			productReference = C6CE68922B97FE780035B995 /* PalRepo.app */;
 			productType = "com.apple.product-type.application";
@@ -201,6 +370,9 @@
 				Base,
 			);
 			mainGroup = C6CE68892B97FE780035B995;
+			packageReferences = (
+				47DF4E5E2BD64116004CA1F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = C6CE68932B97FE780035B995 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -217,6 +389,7 @@
 			files = (
 				C6CE68AA2B97FFE90035B995 /* pals.json in Resources */,
 				C6CE68A72B97FE820035B995 /* LICENSE in Resources */,
+				47DF4E972BD647B7004CA1F1 /* GoogleService-Info.plist in Resources */,
 				C6CE68A82B97FE820035B995 /* README.md in Resources */,
 				C6CE689C2B97FE790035B995 /* Assets.xcassets in Resources */,
 			);
@@ -229,20 +402,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4789DAA12BD3F3C500667FF5 /* BaseTwoView.swift in Sources */,
+				475934532BD2F19500B15745 /* PalMapCard.swift in Sources */,
 				47D471802BC65EBA00001CE8 /* MainView.swift in Sources */,
 				47D471942BC74B4700001CE8 /* SettingsView.swift in Sources */,
-				47D471962BC74B8600001CE8 /* PalDeckViewModel.swift in Sources */,
-				47D4718F2BC74B2700001CE8 /* CampsView.swift in Sources */,
+				4785B0222BC8F6CE0061221B /* PalTyping.swift in Sources */,
+				4759345B2BD34D4F00B15745 /* FilterButton.swift in Sources */,
+				4785B02C2BC8FCCE0061221B /* PalMap.swift in Sources */,
+				472910D52BD570EE00B3214B /* BasesView.swift in Sources */,
+				4785B0282BC8FA270061221B /* PalSkill.swift in Sources */,
+				4785B0242BC8F9570061221B /* PalWork.swift in Sources */,
+				4789DA9E2BD3F3AE00667FF5 /* BaseOneView.swift in Sources */,
+				4789DAA32BD3F3CF00667FF5 /* BaseThreeView.swift in Sources */,
+				4759344B2BD2E1D500B15745 /* PalDetailCard.swift in Sources */,
+				475934452BD2D90A00B15745 /* PalStatsCard.swift in Sources */,
+				47052AE42BC89637005F65AE /* PalDetailView.swift in Sources */,
+				4759343F2BD2C94C00B15745 /* PalSkillCard.swift in Sources */,
+				47DF4E5D2BD57482004CA1F1 /* cstmCircleButton.swift in Sources */,
 				47D4718D2BC74B1F00001CE8 /* PalDeckView.swift in Sources */,
 				47D4718A2BC681A700001CE8 /* ImageButton.swift in Sources */,
 				C6CE68962B97FE780035B995 /* PalRepoApp.swift in Sources */,
+				4785B0262BC8F9C20061221B /* PalAura.swift in Sources */,
+				475934512BD2F18E00B15745 /* PalBreedingCard.swift in Sources */,
 				47D471832BC66B6B00001CE8 /* PalCharacter.swift in Sources */,
-				47D4719E2BC74BA800001CE8 /* SettingsViewModel.swift in Sources */,
-				47D4719C2BC74BA100001CE8 /* WorldMapViewModel.swift in Sources */,
-				47D471922BC74B3A00001CE8 /* WorldMapView.swift in Sources */,
-				47D471982BC74B8D00001CE8 /* CampsViewModel.swift in Sources */,
-				47D4719A2BC74B9700001CE8 /* MainViewModel.swift in Sources */,
+				47DF4E9B2BD64D45004CA1F1 /* BaseFireStoreData.swift in Sources */,
+				475934612BD35A5C00B15745 /* SortFilterPalDeck.swift in Sources */,
+				4785B02A2BC8FAA40061221B /* PalStats.swift in Sources */,
+				475934492BD2E00600B15745 /* PalDropCard.swift in Sources */,
+				4789DAAA2BD4003100667FF5 /* Base.swift in Sources */,
+				475934472BD2DA0000B15745 /* PalMiscInfoCard.swift in Sources */,
+				4785B02E2BC8FCE90061221B /* PalBreeding.swift in Sources */,
+				4759344F2BD2EE6B00B15745 /* PalGeneralInfo.swift in Sources */,
+				4703F8EE2BD6791700187978 /* AuthManager.swift in Sources */,
+				4703F8EB2BD64E6700187978 /* FirestoreManager.swift in Sources */,
+				475934412BD2CF0F00B15745 /* PalWorkCard.swift in Sources */,
 				47052AE22BC7AE4E005F65AE /* PalCharacterCard.swift in Sources */,
+				4759344D2BD2E26500B15745 /* PalAuraCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +501,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -362,6 +558,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				VALIDATE_PRODUCT = YES;
@@ -446,6 +643,80 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		47DF4E5E2BD64116004CA1F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.24.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		47DF4E5F2BD64116004CA1F1 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47DF4E5E2BD64116004CA1F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		47DF4E612BD64116004CA1F1 /* FirebaseAuthCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47DF4E5E2BD64116004CA1F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseAuthCombine-Community";
+		};
+		47DF4E632BD64116004CA1F1 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47DF4E5E2BD64116004CA1F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		47DF4E652BD64116004CA1F1 /* FirebaseDatabaseSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47DF4E5E2BD64116004CA1F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabaseSwift;
+		};
+		47DF4E672BD64116004CA1F1 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47DF4E5E2BD64116004CA1F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
+		47DF4E692BD64116004CA1F1 /* FirebaseFirestoreCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47DF4E5E2BD64116004CA1F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFirestoreCombine-Community";
+		};
+		47DF4E6B2BD64116004CA1F1 /* FirebaseFirestoreSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47DF4E5E2BD64116004CA1F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestoreSwift;
+		};
+		47DF4E6D2BD64116004CA1F1 /* FirebaseFunctions */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47DF4E5E2BD64116004CA1F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFunctions;
+		};
+		47DF4E6F2BD64116004CA1F1 /* FirebaseFunctionsCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47DF4E5E2BD64116004CA1F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseFunctionsCombine-Community";
+		};
+		47DF4E712BD64116004CA1F1 /* FirebaseInstallations */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47DF4E5E2BD64116004CA1F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseInstallations;
+		};
+		47DF4E732BD64116004CA1F1 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47DF4E5E2BD64116004CA1F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+		47DF4E752BD64116004CA1F1 /* FirebaseStorageCombine-Community */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 47DF4E5E2BD64116004CA1F1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = "FirebaseStorageCombine-Community";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = C6CE688A2B97FE780035B995 /* Project object */;
 }
